@@ -113,8 +113,8 @@
 ------
 ### Ответ на залание 3
 
-Разработчики OpenTofu приняли решение закрыть доступ к своему реестру с российских IP-адресов и удалить провайдеров российских облачных сервисов, таких как Yandex Cloud, Cloud.ru (бывший SberCloud) и Rustack Cloud Platform.
 ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-3-1.png)
+![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-3-2.png)
 
 ### Правила приёма работы
 
