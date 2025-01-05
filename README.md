@@ -36,7 +36,48 @@
 8. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**. 
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
 
+## Ответ на задание 1
 
+1. Сохранять личную и секретную информацию согласно файлу .gitignore можно в файле personal.auto.tfvars.
+2.  ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-1.png)
+3.  ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-2.png)
+    Первая ошибка указывает на то, что в блоке docker_images отсутствует второе имя, которое необходимо для идентификации ресурса. В Terraform каждый ресурс должен иметь два идентификатора: тип ресурса и его уникальное имя внутри конфигурации.
+    Вторая ошибка - имя ресурса 1nginx начинается с цифры, что не допустимо в Terraform. В названиях ресурсов должны использоваться только буквы, цифры, подчеркивания и дефисы, при этом имя должно начинаться с буквы или подчеркивания.
+    ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-3.png)
+    Третья ошибка - неверное обращение к ресурсу random password    
+4.  Фрагмент кода
+      ```
+      resource "docker_image" "nginx" {
+      name         = "nginx:latest"
+      keep_locally = true
+      }
+
+      resource "docker_container" "nginx" {
+        image = docker_image.nginx.image_id
+        name  = "example_${random_password.random_string.result}"
+
+        ports {
+          internal = 80
+          external = 9090
+        }
+      }
+      ```
+    ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-4.png)  
+5.  Ключ -auto-approve автоматически подтверждает все действия, которые Terraform собирается выполнить. Исходя их этого можно сделать вывод, что опасность заклбчается в том, что любые изменения в коде будут применяться без подтверждения, которые могут сказаться негативно на инфраструктуре.
+    Ключ -auto-approve может помочь при интеграции Terraform в pipeline, где требуется беспрепятственное применение изменений, а также когда вы уверены в конфигурации и хотите избежать интерактивных подтверждений для ускорения процессов.
+    ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-5.png)
+7.  ```
+    {
+      "version": 4,
+      "terraform_version": "1.10.3",
+      "serial": 40,
+      "lineage": "0824d40c-4248-e385-229f-859782e9c36a",
+      "outputs": {},
+      "resources": [],
+      "check_results": null
+    }
+    ```
+8.  Согласно документации keep_locally: Если true, то образ Docker не будет удален при операции уничтожения. Если false, то образ будет удален из локального хранилища docker при операции уничтожения.
 ------
 
 ## Дополнительное задание (со звёздочкой*)
@@ -61,6 +102,9 @@
 
 6. Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды ```env```. Запишите ваш финальный код в репозиторий.
 
+## Ответ на задание 2
+1.  [ссылка](https://github.com/VN351/vm-sql-tf/create-vm)
+2.  [ссылка](https://github.com/VN351/vm-sql-tf/deploy-mysql)
 ### Задание 3*
 1. Установите [opentofu](https://opentofu.org/)(fork terraform с лицензией Mozilla Public License, version 2.0) любой версии
 2. Попробуйте выполнить тот же код с помощью ```tofu apply```, а не terraform apply.
