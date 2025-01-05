@@ -111,6 +111,10 @@
 1. Установите [opentofu](https://opentofu.org/)(fork terraform с лицензией Mozilla Public License, version 2.0) любой версии
 2. Попробуйте выполнить тот же код с помощью ```tofu apply```, а не terraform apply.
 ------
+### Ответ на залание 3
+
+Разработчики OpenTofu приняли решение закрыть доступ к своему реестру с российских IP-адресов и удалить провайдеров российских облачных сервисов, таких как Yandex Cloud, Cloud.ru (бывший SberCloud) и Rustack Cloud Platform.
+![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-3-1.png)
 
 ### Правила приёма работы
 
