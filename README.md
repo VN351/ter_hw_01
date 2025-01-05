@@ -103,8 +103,8 @@
 6. Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды ```env```. Запишите ваш финальный код в репозиторий.
 
 ## Ответ на задание 2
-1.  [Ссылка на Terraform создания VM](https://github.com/VN351/vm-sql-tf/tree/master/create-vm) <br>
-    [Ссылка на Terraform разворачивания SQL](https://github.com/VN351/vm-sql-tf/tree/master/deploy-mysql)
+1.  [Ссылка на конфигурацию для разворачивания VM](https://github.com/VN351/vm-sql-tf/tree/master/create-vm) <br>
+    [Ссылка на конфигурацию для разворачивания SQL](https://github.com/VN351/vm-sql-tf/tree/master/deploy-mysql)
 2.  ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-2-1.png)
 
 ### Задание 3*
