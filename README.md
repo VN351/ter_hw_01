@@ -39,11 +39,11 @@
 ## Ответ на задание 1
 
 1. Сохранять личную и секретную информацию согласно файлу .gitignore можно в файле personal.auto.tfvars.
-2.  ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-1.png)
-3.  ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-2.png)
+2.  ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-1-1.png)
+3.  ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-1-2.png)
     Первая ошибка указывает на то, что в блоке docker_images отсутствует второе имя, которое необходимо для идентификации ресурса. В Terraform каждый ресурс должен иметь два идентификатора: тип ресурса и его уникальное имя внутри конфигурации.
     Вторая ошибка - имя ресурса 1nginx начинается с цифры, что не допустимо в Terraform. В названиях ресурсов должны использоваться только буквы, цифры, подчеркивания и дефисы, при этом имя должно начинаться с буквы или подчеркивания.
-    ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-3.png)
+    ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-1-3.png)
     Третья ошибка - неверное обращение к ресурсу random password    
 4.  Фрагмент кода
       ```
@@ -62,10 +62,10 @@
         }
       }
       ```
-    ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-4.png)  
+    ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-1-4.png)  
 5.  Ключ -auto-approve автоматически подтверждает все действия, которые Terraform собирается выполнить. Исходя их этого можно сделать вывод, что опасность заклбчается в том, что любые изменения в коде будут применяться без подтверждения, которые могут сказаться негативно на инфраструктуре.
     Ключ -auto-approve может помочь при интеграции Terraform в pipeline, где требуется беспрепятственное применение изменений, а также когда вы уверены в конфигурации и хотите избежать интерактивных подтверждений для ускорения процессов.
-    ![alt text](https://github.com/VN351/ter-homeworks/raw/main/images/task-1-5.png)
+    ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-1-5.png)
 7.  ```
     {
       "version": 4,
