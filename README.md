@@ -103,8 +103,10 @@
 6. Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды ```env```. Запишите ваш финальный код в репозиторий.
 
 ## Ответ на задание 2
-1.  [ссылка](https://github.com/VN351/vm-sql-tf/tree/master/create-vm)
-2.  [ссылка](https://github.com/VN351/vm-sql-tf/tree/master/deploy-mysql)
+1.  [Ссылка на Terraform создания VM](https://github.com/VN351/vm-sql-tf/tree/master/create-vm)
+    [Ссылка на Terraform разворачивания SQL](https://github.com/VN351/vm-sql-tf/tree/master/deploy-mysql)
+2.  ![alt text](https://github.com/VN351/ter_hw_01/raw/main/images/task-2-1.png)
+
 ### Задание 3*
 1. Установите [opentofu](https://opentofu.org/)(fork terraform с лицензией Mozilla Public License, version 2.0) любой версии
 2. Попробуйте выполнить тот же код с помощью ```tofu apply```, а не terraform apply.
